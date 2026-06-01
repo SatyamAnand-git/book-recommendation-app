@@ -34,7 +34,11 @@ public class AuthService {
     public String login(LoginRequest request) {
 
         User user = userRepository.findByEmail(request.getEmail())
-                .orElseThrow(() -> new RuntimeException("User not found"));
+                .orElse(null);
+
+        if (user == null) {
+            return "User not found";
+        }
 
         boolean isValid = passwordEncoder.matches(
                 request.getPassword(),
@@ -42,7 +46,7 @@ public class AuthService {
         );
 
         if (!isValid) {
-            throw new RuntimeException("Invalid password");
+            return "Invalid password";
         }
 
         return jwtService.generateToken(user.getEmail());
