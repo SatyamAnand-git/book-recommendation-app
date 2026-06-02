@@ -1,19 +1,22 @@
 # Book Recommendation App
 
-A full-stack book recommendation platform built with Spring Boot, MongoDB, and Next.js.
+A full-stack book recommendation platform built with Spring Boot, MongoDB, JWT Authentication, Next.js and TypeScript.
 
 ## Features
-- Book CRUD Operations
-- User Authentication
-- BCrypt Password Hashing
-- JWT Token Generation
-- REST APIs
-- MongoDB Integration
+- User Signup/Login
+- JWT Authentication
+- Secure Routes
+- Add Books
+- Edit Books
+- Delete Books
+- Search Books
+- Genre Filtering
 
 ## Tech Stack
-- Java
 - Spring Boot
 - Spring Security
 - MongoDB
-- Next.js
 - JWT
+- Next.js
+- TypeScript
+- Tailwind CSS
